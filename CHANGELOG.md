@@ -8,3 +8,4 @@
 - Update package description.
 - Fix linter rules. (Type matching)
 - Update examples files.
+- Remove `mocktail` dependency.
