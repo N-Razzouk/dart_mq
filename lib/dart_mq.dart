@@ -1,3 +1,7 @@
+/// Library definition.
+library dart_mq;
+
+/// Export files.
 export 'src/consumer/consumer.dart';
 export 'src/core/constants/enums.dart';
 export 'src/message/message.dart';

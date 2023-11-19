@@ -22,25 +22,25 @@ DartMQ is a Dart package that provides message queue functionality for sending m
 
 In the development of complex applications, dependencies among components are almost inevitable. Often, different components within your application need to communicate with each other, leading to tight coupling between these elements.
 
-![Components](docs/assets/components.png)
+![Components](assets/components.png)
 
 ###
 
 Message queues provide an effective means to decouple these components by enabling communication through messages. This decoupling strategy enhances the development of robust applications.
 
-![Components with MQ](docs/assets/components-mq.png)
+![Components with MQ](assets/components-mq.png)
 
 ###
 
 DartMQ employs the publish-subscribe pattern. **Producers** send messages, **Consumers** receive them, and **Queues** and **Exchanges** facilitate this communication.
 
-![Simple View](docs/assets/simple-view.png)
+![Simple View](assets/simple-view.png)
 
 ###
 
 Communication channels are called Exchanges. Exchanges receive messages from Producers, efficiently routing them to Queues for Consumer consumption.
 
-![Detailed View](docs/assets/detailed-view.png)
+![Detailed View](assets/detailed-view.png)
 
 ## Exchanges
 
@@ -50,19 +50,19 @@ Communication channels are called Exchanges. Exchanges receive messages from Pro
 
 - **Default Exchange**: Routes messages based on Queue names.
 
-![Default Exchange](docs/assets/default-exchange.png)
+![Default Exchange](assets/default-exchange.png)
 
 ###
 
 - **Fanout Exchange**: Sends messages to all bound Queues.
 
-![Fanout Exchange](docs/assets/fanout-exchange.png)
+![Fanout Exchange](assets/fanout-exchange.png)
 
 ###
 
 - **Direct Exchange**: Routes messages to Queues based on routing keys.
 
-![Direct Exchange](docs/assets/direct-exchange.png)
+![Direct Exchange](assets/direct-exchange.png)
 
 ## Usage
 

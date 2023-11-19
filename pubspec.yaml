@@ -1,5 +1,5 @@
 name: dart_mq
-description: A simple messaging system using Dart.
+description: DartMQ is a message-queue system that facilitates communication between different components in the application.
 repository: https://github.com/N-Razzouk/dart_mq
 issue_tracker: https://github.com/N-Razzouk/dart_mq/issues
 homepage: https://github.com/N-Razzouk/dart_mq
