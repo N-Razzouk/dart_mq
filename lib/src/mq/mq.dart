@@ -169,8 +169,8 @@ final class MQClient extends BaseMQClient implements MQClientInterface {
   }) {
     try {
       final exchange = _exchanges.get(exchangeName);
-      switch (exchange.runtimeType) {
-        case DirectExchange:
+      switch (exchange) {
+        case DirectExchange _:
           if (bindingKey == null) {
             throw BindingKeyRequiredException();
           }
@@ -178,12 +178,13 @@ final class MQClient extends BaseMQClient implements MQClientInterface {
             queue: _fetchQueue(queueId),
             bindingKey: bindingKey,
           );
-        case FanoutExchange:
+        case FanoutExchange _:
           exchange.bindQueue(
             queue: _fetchQueue(queueId),
             bindingKey: '',
           );
         default:
+          return;
       }
     } on IdNotRegisteredException catch (_) {
       throw ExchangeNotRegisteredException(exchangeName);
