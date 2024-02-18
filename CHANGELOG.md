@@ -7,5 +7,9 @@
 - Fix documentation. (Image path)
 - Update package description.
 - Fix linter rules. (Type matching)
-- Update examples files.
+- Update `example` files.
 - Remove `mocktail` dependency.
+
+## 1.0.2
+
+ - Update documentation.

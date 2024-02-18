@@ -3,7 +3,7 @@
 <!-- TODO: fix pub version badge -->
 
 [![Pub](https://img.shields.io/pub/v/dart_mq.svg)](https://pub.dev/packages/dart_mq)
-[![coverage](coverage_badge.svg)](https://app.codecov.io/gh/N-Razzouk/dart_mq)
+[![coverage](https://codecov.io/gh/N-Razzouk/dart_mq/graph/badge.svg)](https://app.codecov.io/gh/N-Razzouk/dart_mq)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 DartMQ is a Dart package that provides message queue functionality for sending messages between different components in your Dart and Flutter applications. It offers a simple and efficient way to implement message queues, making it easier to build robust and scalable applications.
@@ -22,25 +22,25 @@ DartMQ is a Dart package that provides message queue functionality for sending m
 
 In the development of complex applications, dependencies among components are almost inevitable. Often, different components within your application need to communicate with each other, leading to tight coupling between these elements.
 
-![Components](assets/components.png)
+![Components](https://github.com/N-Razzouk/dart_mq/blob/master/assets/components.png?raw=true)
 
 ###
 
 Message queues provide an effective means to decouple these components by enabling communication through messages. This decoupling strategy enhances the development of robust applications.
 
-![Components with MQ](assets/components-mq.png)
+![Components with MQ](https://github.com/N-Razzouk/dart_mq/blob/master/assets/components-mq.png?raw=true)
 
 ###
 
 DartMQ employs the publish-subscribe pattern. **Producers** send messages, **Consumers** receive them, and **Queues** and **Exchanges** facilitate this communication.
 
-![Simple View](assets/simple-view.png)
+![Simple View](https://github.com/N-Razzouk/dart_mq/blob/master/assets/simple-view.png?raw=true)
 
 ###
 
 Communication channels are called Exchanges. Exchanges receive messages from Producers, efficiently routing them to Queues for Consumer consumption.
 
-![Detailed View](assets/detailed-view.png)
+![Detailed View](https://github.com/N-Razzouk/dart_mq/blob/master/assets/detailed-view.png?raw=true)
 
 ## Exchanges
 
@@ -50,19 +50,19 @@ Communication channels are called Exchanges. Exchanges receive messages from Pro
 
 - **Default Exchange**: Routes messages based on Queue names.
 
-![Default Exchange](assets/default-exchange.png)
+![Default Exchange](https://github.com/N-Razzouk/dart_mq/blob/master/assets/default-exchange.png?raw=true)
 
 ###
 
 - **Fanout Exchange**: Sends messages to all bound Queues.
 
-![Fanout Exchange](assets/fanout-exchange.png)
+![Fanout Exchange](https://github.com/N-Razzouk/dart_mq/blob/master/assets/fanout-exchange.png?raw=true)
 
 ###
 
 - **Direct Exchange**: Routes messages to Queues based on routing keys.
 
-![Direct Exchange](assets/direct-exchange.png)
+![Direct Exchange](https://github.com/N-Razzouk/dart_mq/blob/master/assets/direct-exchange.png?raw=true)
 
 ## Usage
 
@@ -71,7 +71,7 @@ Communication channels are called Exchanges. Exchanges receive messages from Pro
 <!-- TODO: change import in code snippet. -->
 
 ```dart
-import 'package:rabbit_clone/rabbit_clone.dart';
+import 'package:dart_mq/dart_mq.dart';
 
 void main() {
   // Initialize DartMQ
