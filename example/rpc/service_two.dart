@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:dart_mq/dart_mq.dart';
 
-class ServiceTwo with Consumer {
+class ServiceTwo with ConsumerMixin {
   ServiceTwo() {
     MQClient.instance.declareExchange(
       exchangeName: 'ServiceRPC',

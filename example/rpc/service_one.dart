@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dart_mq/dart_mq.dart';
 
-class ServiceOne with Producer {
+class ServiceOne with ProducerMixin {
   Future<void> requestFoo() async {
     final res = await sendRPCMessage<String>(
       exchangeName: 'ServiceRPC',

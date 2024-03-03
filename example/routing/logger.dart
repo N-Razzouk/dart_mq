@@ -1,6 +1,6 @@
 import 'package:dart_mq/dart_mq.dart';
 
-final class Logger with Producer {
+final class Logger with ProducerMixin {
   Logger() {
     MQClient.instance.declareExchange(
       exchangeName: 'logs',

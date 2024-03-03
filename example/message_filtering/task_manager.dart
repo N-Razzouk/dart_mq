@@ -1,6 +1,6 @@
 import 'package:dart_mq/dart_mq.dart';
 
-final class TaskManager with Producer {
+final class TaskManager with ProducerMixin {
   TaskManager() {
     MQClient.instance.declareQueue('task_queue');
   }

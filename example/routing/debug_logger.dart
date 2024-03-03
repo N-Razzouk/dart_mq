@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dart_mq/dart_mq.dart';
 
-final class DebugLogger with Consumer {
+final class DebugLogger with ConsumerMixin {
   DebugLogger() {
     MQClient.instance.declareExchange(
       exchangeName: 'logs',

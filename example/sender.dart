@@ -1,11 +1,11 @@
 import 'package:dart_mq/dart_mq.dart';
 
-final class Sender with Producer {
+final class Sender with ProducerMixin {
   Sender() {
     MQClient.instance.declareQueue('hello');
   }
 
-  void sendGreeting({required String greeting}) => sendMessage(
+  Future<void> sendGreeting({required String greeting}) async => sendMessage(
         routingKey: 'hello',
         payload: greeting,
       );

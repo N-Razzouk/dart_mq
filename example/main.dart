@@ -10,13 +10,7 @@ void main() async {
 
   final receiver = Receiver()..listenToGreeting();
 
-  sender.sendGreeting(greeting: 'Hello, World!');
-
-  /// This line is because, well, the whole idea is built
-  /// on asynchronous programming, so we need to wait for
-  /// the stream to receive so that the listener can
-  /// react appropriately.
-  await Future.delayed(const Duration(milliseconds: 10));
+  await sender.sendGreeting(greeting: 'Hello, World!');
 
   receiver.stopListening();
 }

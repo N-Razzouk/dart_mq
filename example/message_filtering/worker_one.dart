@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dart_mq/dart_mq.dart';
 
-final class WorkerOne with Consumer {
+final class WorkerOne with ConsumerMixin {
   WorkerOne() {
     MQClient.instance.declareQueue('task_queue');
   }

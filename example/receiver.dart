@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dart_mq/dart_mq.dart';
 
-final class Receiver with Consumer {
+final class Receiver with ConsumerMixin {
   Receiver() {
     MQClient.instance.declareQueue('hello');
   }
