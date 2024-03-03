@@ -8,20 +8,18 @@ import 'package:dart_mq/src/mq/mq.dart';
 
 /// A mixin implementing the `ConsumerInterface` for message consumption.
 ///
-/// The `Consumer` mixin provides a concrete implementation of the
+/// The `ConsumerMixin` mixin provides a concrete implementation of the
 /// `ConsumerInterface`for message consumption. It allows classes to easily
 /// consume messages from specific queues by subscribing to them, handling
 /// received messages, and managing subscriptions.
 ///
 /// Example:
 /// ```dart
-/// class MyMessageConsumer with Consumer {
+/// class MyMessageConsumer with ConsumerMixin {
 ///   // Custom implementation of the message consumer.
 /// }
 /// ```
-@Deprecated('Please use `ConsumerMixin` instead. '
-    'This will be removed in v2.0.0')
-mixin Consumer implements ConsumerInterface {
+mixin ConsumerMixin implements ConsumerInterface {
   /// A registry of active message subscriptions.
   final Registrar<StreamSubscription<Message>> _subscriptions =
       Registrar<StreamSubscription<Message>>();
@@ -57,10 +55,9 @@ mixin Consumer implements ConsumerInterface {
   }
 
   @override
-  void unsubscribe({required String queueId}) {
-    _subscriptions.get(queueId).cancel();
-    _subscriptions.unregister(queueId);
-  }
+  void unsubscribe({required String queueId}) => _subscriptions
+    ..get(queueId).cancel()
+    ..unregister(queueId);
 
   @override
   void pauseSubscription(String queueId) => _subscriptions.get(queueId).pause();

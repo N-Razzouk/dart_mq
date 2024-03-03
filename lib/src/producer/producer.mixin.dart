@@ -5,20 +5,18 @@ import 'package:dart_mq/src/producer/producer.interface.dart';
 
 /// A mixin implementing the `ProducerInterface` for message production.
 ///
-/// The `Producer` mixin provides a concrete implementation of the
+/// The `ProducerMixin` mixin provides a concrete implementation of the
 /// `ProducerInterface` for message production. It allows classes to easily send
 /// messages to exchanges, send RPC (Remote Procedure Call) messages, and set a
 /// callback for handling push notifications.
 ///
 /// Example:
 /// ```dart
-/// class MyMessageProducer with Producer {
+/// class MyMessageProducer with ProducerMixin {
 ///   // Custom implementation of the message producer.
 /// }
 /// ```
-@Deprecated('Please use `ProducerMixin` instead. '
-    'This will be removed in v2.0.0')
-mixin Producer implements ProducerInterface {
+mixin ProducerMixin implements ProducerInterface {
   /// A callback function for handling push notifications (received messages).
   Function(Message message)? _callback;
 
@@ -35,6 +33,7 @@ mixin Producer implements ProducerInterface {
       headers: headers,
       timestamp: timestamp,
     );
+
     MQClient.instance.sendMessage(
       exchangeName: exchangeName,
       routingKey: routingKey,
