@@ -93,7 +93,7 @@ MQClient.declareQueue('my_queue');
 ### Create a Producer:
 
 ```dart
-class MyProducer with Producer {
+class MyProducer with ProducerMixin {
   void greet(String message) {
     // Send a message to the queue
     sendMessage(
@@ -109,7 +109,7 @@ class MyProducer with Producer {
 ### Create a Consumer:
 
 ```dart
-class MyConsumer with Consumer {
+class MyConsumer with ConsumerMixin {
   void listenToQueue() {
     // Subscribe to the queue and process incoming messages
     subscribe(

@@ -4,7 +4,7 @@ repository: https://github.com/N-Razzouk/dart_mq
 issue_tracker: https://github.com/N-Razzouk/dart_mq/issues
 homepage: https://github.com/N-Razzouk/dart_mq
 documentation: https://github.com/N-Razzouk/dart_mq
-version: 1.0.2
+version: 1.1.0
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
