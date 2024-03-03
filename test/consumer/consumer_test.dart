@@ -1,10 +1,8 @@
-import 'package:dart_mq/src/consumer/consumer.dart';
+import 'package:dart_mq/dart_mq.dart';
 import 'package:dart_mq/src/core/exceptions/exceptions.dart';
-import 'package:dart_mq/src/message/message.dart';
-import 'package:dart_mq/src/mq/mq.dart';
 import 'package:test/test.dart';
 
-class MyMessageConsumer with Consumer {
+class MyMessageConsumer with ConsumerMixin {
   // Custom implementation of the message consumer.
 }
 

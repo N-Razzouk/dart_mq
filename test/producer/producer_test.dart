@@ -1,11 +1,8 @@
 import 'dart:async';
-
-import 'package:dart_mq/src/message/message.dart';
-import 'package:dart_mq/src/mq/mq.dart';
-import 'package:dart_mq/src/producer/producer.dart';
+import 'package:dart_mq/dart_mq.dart';
 import 'package:test/test.dart';
 
-class MyMessageProducer with Producer {
+class MyMessageProducer with ProducerMixin {
   // Custom implementation of the message producer.
 }
 

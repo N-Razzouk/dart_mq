@@ -153,13 +153,8 @@ final class MQClient extends BaseMQClient implements MQClientInterface {
   }
 
   @override
-  Message? getLatestMessage(String queueId) {
-    try {
-      return _fetchQueue(queueId).latestMessage;
-    } on QueueNotRegisteredException catch (_) {
-      rethrow;
-    }
-  }
+  Message? getLatestMessage(String queueId) =>
+      _fetchQueue(queueId).latestMessage;
 
   @override
   void bindQueue({
@@ -188,8 +183,6 @@ final class MQClient extends BaseMQClient implements MQClientInterface {
       }
     } on IdNotRegisteredException catch (_) {
       throw ExchangeNotRegisteredException(exchangeName);
-    } on QueueNotRegisteredException catch (_) {
-      rethrow;
     }
   }
 
@@ -236,7 +229,7 @@ final class MQClient extends BaseMQClient implements MQClientInterface {
   void deleteExchange(String exchangeName) {
     try {
       _exchanges.unregister(exchangeName);
-    } catch (e) {
+    } catch (_) {
       return;
     }
   }
